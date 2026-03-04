@@ -18,11 +18,10 @@ class CountryRemoteDataSourceImpl implements CountryRemoteDataSource {
   @override
   Future<List<CountryModel>> getAllCountries() async {
     try {
-      // PERBAIKAN: Gunakan fields yang sudah dibatasi maksimal 10
       final response = await apiClient.get(
         ApiConstants.allCountries,
         queryParameters: {
-          'fields': ApiConstants.fields,
+          'fields': ApiConstants.listFields,
         },
       );
 
@@ -41,11 +40,12 @@ class CountryRemoteDataSourceImpl implements CountryRemoteDataSource {
   Future<CountryModel> getCountryByName(String name) async {
     try {
       final encodedName = Uri.encodeComponent(name);
+      // PERBAIKAN: Hapus fields filter untuk mendapatkan SEMUA data lengkap
       final response = await apiClient.get(
         '${ApiConstants.countryByName}/$encodedName',
         queryParameters: {
           'fullText': 'true',
-          'fields': ApiConstants.detailFields, // Gunakan detail fields untuk country detail
+          // Tidak ada 'fields' parameter = get all fields
         },
       );
 
@@ -67,7 +67,7 @@ class CountryRemoteDataSourceImpl implements CountryRemoteDataSource {
       final response = await apiClient.get(
         '${ApiConstants.countryByName}/$encodedQuery',
         queryParameters: {
-          'fields': ApiConstants.fields,
+          'fields': ApiConstants.listFields,
         },
       );
 
@@ -89,7 +89,7 @@ class CountryRemoteDataSourceImpl implements CountryRemoteDataSource {
       final response = await apiClient.get(
         '${ApiConstants.countriesByRegion}/$encodedRegion',
         queryParameters: {
-          'fields': ApiConstants.fields,
+          'fields': ApiConstants.listFields,
         },
       );
 

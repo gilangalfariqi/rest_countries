@@ -17,10 +17,9 @@ class ApiConstants {
     'Accept': 'application/json',
   };
 
-  // PERBAIKAN: Maksimal 10 fields sesuai dokumentasi API
-  // Pilih fields yang paling penting: name, capital, region, population, flags, coatOfArms, cca2, area, subregion, status
-  static const String fields = 'name,capital,region,population,flags,coatOfArms,cca2,area,subregion,status';
+  // Fields untuk list (maksimal 10)
+  static const String listFields = 'name,capital,region,population,flags,coatOfArms,cca2,area,subregion,status';
 
-  // Fields untuk detail (jika perlu lebih banyak, buat request terpisah tanpa fields)
-  static const String detailFields = 'name,capital,region,subregion,population,currencies,languages,flags,coatOfArms,cca2';
+  // Fields untuk detail (maksimal 10) - fokus pada currencies, languages, timezones
+  static const String detailFields = 'name,capital,region,subregion,population,currencies,languages,flags,timezones,car';
 }
