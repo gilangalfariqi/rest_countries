@@ -66,16 +66,14 @@ A professional Flutter application that provides a comprehensive list of countri
 
 This project follows **Clean Architecture** with clear separation of concerns:
 
-## 📸 Screenshots
+## 📸 Preview
 
-### Home Screen
-![Home Screen](screenshots/home_screen.png)
+<div align="center">
+  <img src="screenshots/home.png" width="250" alt="Home Screen"/>
+  <img src="screenshots/search.png" width="250" alt="Search Screen"/>
+  <img src="screenshots/detail_1.png" width="250" alt="Detail Screen"/>
+</div>
 
-### Search Screen
-![Search Screen](screenshots/search_screen.png)
-
-### Detail Screen
-![Detail Screen](screenshots/detail_screen.png)
-
-### Offline Mode
-![Offline Screen](screenshots/offline_screen.png)
+<div align="center">
+  <img src="screenshots/detail_2.png" width="250" alt="Detail Screen"/>
+</div>
